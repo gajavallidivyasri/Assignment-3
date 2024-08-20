@@ -1,0 +1,79 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1a1a1a;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    width: 350px;
+    height: 180px;
+    background-color: #333333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    transition: background-color 0.4s ease;
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.2);
+    position: relative;
+    border: 2px solid #555;
+}
+
+.text {
+    color: #f1f1f1;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    transition: color 0.4s ease;
+    text-transform: uppercase;
+}
+
+.toggle-button {
+    margin-top: 20px;
+    padding: 12px 36px;
+    background: linear-gradient(145deg, #1c1c1c, #0a0a0a);
+    color: #f1f1f1;
+    border: 2px solid #444;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    display: inline-block;
+    transition: all 0.4s ease;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    letter-spacing: 1.5px;
+    position: relative;
+}
+
+.button-text::before {
+    content: "Activate";
+}
+
+.toggle-checkbox {
+    display: none;
+}
+
+/* When the checkbox is checked, change the button text to "Deactivate" */
+.toggle-checkbox:checked + .toggle-button .button-text::before {
+    content: "Deactivate";
+}
+
+/* Change button and container appearance when checked */
+.toggle-checkbox:checked + .toggle-button {
+    background: linear-gradient(145deg, #0a0a0a, #1c1c1c);
+    color: #ff6347;
+    border-color: #ff6347;
+}
+
+.toggle-checkbox:checked + .toggle-button + .container {
+    background-color: #121212;
+    border-color: #ff6347;
+}
+
+.toggle-checkbox:checked + .toggle-button + .container .text {
+    color: #ff6347;
+}
